@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --burton-black: #0A0004;
+  --burton-blue: #6D5ACF;
+  --burton-white: #F5F5F5;
+  --burton-purple: #3A1F68;
+  --burton-amber: #FFB347;
+  --burton-charcoal: #2E2E2E;
+
+  /* Lighting variables */
+  --flicker-bright: rgba(255, 255, 255, 0.8);
+  --flicker-dim: rgba(255, 255, 255, 0.2);
+}
+
+@layer base {
+  html, body {
+    @apply h-full overflow-x-hidden;
+  }
+  
+  body {
+    @apply bg-[var(--burton-black)] text-[var(--burton-white)] overflow-y-auto;
+  }
+}
+
+@layer components {
+  .burton-text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .burton-box {
+    @apply bg-[var(--burton-charcoal)] border-2 border-[var(--burton-purple)] 
+           shadow-lg rounded-sm p-4;
+  }
+
+  .burton-button {
+    @apply bg-[var(--burton-purple)] text-[var(--burton-white)]
+           hover:bg-[var(--burton-blue)] transition-colors duration-300
+           px-4 py-2 rounded-sm burton-text-shadow;
+  }
+}
